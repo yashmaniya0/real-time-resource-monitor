@@ -1,0 +1,3 @@
+/home/yash-maniya/Desktop/Project/system-monitor-linux-cpp/build/CMakeFiles/monitor.dir
+/home/yash-maniya/Desktop/Project/system-monitor-linux-cpp/build/CMakeFiles/edit_cache.dir
+/home/yash-maniya/Desktop/Project/system-monitor-linux-cpp/build/CMakeFiles/rebuild_cache.dir

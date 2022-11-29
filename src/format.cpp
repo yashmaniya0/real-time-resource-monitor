@@ -1,0 +1,61 @@
+#include "format.h"
+
+#include <time.h>
+
+#include <iomanip>
+#include <sstream>
+#include <string>
+
+using std::string;
+
+// -------- Macros ---------------------------------------------------------------------------------------------------
+#define ll                     long long int
+#define ull                     unsingned long long
+#define ff                      first
+#define ss                      second
+#define pii                     pair<int,int>
+#define vii                     vector<int>
+#define usii                    unordered_set<int>
+#define sii                     set<int>
+#define mii                     map<int, int>
+#define umii                    unordered_map<int, int>
+#define effi(x)                 x.max_load_factor(0.2);     // takes greater space to avoid collisions
+#define pb                      push_back
+#define sp                      " "
+#define yep                     cout<<"YES"<<endl;
+#define nope                    cout<<"NO"<<endl;
+#define neg1                    cout<<-1<<endl;
+#define boost                   ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#define forl(i,n)               for(int i=0;i<n;i++)
+#define itr(i,a,b)              for(int i=a;(b>=a)?i<b:i>b;(b>=a)?i++:i--)
+#define print_arr2d(arr,n,m)    forl(i,n){forl(j,m){cout<<arr[i][j]<<' ';}cout<<endl;}
+#define input(arr,n)            forl(i,n){cin>>arr[i];}
+#define input_arr2d(arr, n, m)  forl(i,n){forl(j,m){cin>>arr[i][j];}}
+#define sprec(x,y)              fixed<<setprecision(y)<<x
+#define all(v)                  v.begin(),v.end()
+#define rall(v)                 v.rbegin(),v.rend()
+#define gcd(a,b)                __gcd(a,b)
+#define lcm(a,b)                ((a)*(b)) / __gcd((a),(b))
+#define min3(a,b,c)             min(c, min(a, b))
+#define min4(a,b,c,d)           min(d, min(c, min(a, b)))
+#define max3(a,b,c)             max(c, max(a, b))
+#define max4(a,b,c,d)           max(d, max(c, max(a, b)))
+// --------------------------------------------------------------------------------------------------------------------
+
+
+string Format::ElapsedTime(long seconds [[maybe_unused]]) {
+  try {
+    time_t tSeconds(seconds);
+    tm *time = gmtime(&tSeconds);
+    if (time == nullptr) {
+      return "00:00:00";
+    }
+    std::stringstream ss;
+    ss << std::setfill('0') << std::setw(2) << time->tm_hour << ":"
+       << std::setfill('0') << std::setw(2) << time->tm_min << ":"
+       << std::setfill('0') << std::setw(2) << time->tm_sec;
+    return ss.str();
+  } catch (...) {
+    return "00:00:00";
+  }
+}
