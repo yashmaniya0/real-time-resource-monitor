@@ -50,7 +50,7 @@ make build
 ./build/monitor
 ```
 
-For displaying real-time resource monitor :
+For displaying real-time resource monitor (will only work for Windows):
 ```
 python3 ./src/resource_usage_graph.py
 ```
